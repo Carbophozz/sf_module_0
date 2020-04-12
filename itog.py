@@ -3,7 +3,7 @@
 
 def game_core_v3(number):
 
-    '''using trivial diсhotomy search'''
+    '''using trivial diсhotomy search in a loop'''
     
     # just in case we might change the range of possible guesses
     lo = 1
@@ -17,8 +17,8 @@ def game_core_v3(number):
     while number != predict:
         
         #with each iteration step is diminished in half
+        
         step = (step + step % 2) // 2
-
         if number > predict: 
             predict += step
 
@@ -42,7 +42,8 @@ def game_core_v3(number):
 
 def game_core_v4(number, predict=50, step=50):
 
-
+     '''using trivial diсhotomy search recursively'''
+        
     step = (step + step % 2) // 2
   
     if number > predict: 
